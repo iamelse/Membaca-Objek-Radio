@@ -1,0 +1,173 @@
+<html>
+  <title></title>
+  <head>
+      
+  </head>
+
+<form name=form>
+<style>
+.table {
+  color: #444;
+  border-collapse: collapse;
+  width: 50%;
+  border: 0px solid #f2f5f7;
+  opacity: 0.6;
+}
+h2
+{
+  text-transform: uppercase;
+  color: #fff;
+  padding-top: 5.2%;
+  padding-bottom: 5%;
+  opacity: 0.8;
+  font-weight: 200;
+  font-size: 40px;
+}
+.table tr th{
+  background: #35A9DB;
+  color: #fff;
+  font-weight: normal;
+}
+
+.table, td {
+  padding: 8px 20px;
+  text-align: left;
+}
+
+.table tr {
+  background-color: #f5f5f5;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.btn{
+  display: inline-block;
+  text-decoration: none;
+  color: #35A9DB;
+  border: 2px solid #35A9DB;
+  padding: 7.5px 15px;
+  transition: 0.4s linear;
+  background-color: #fff;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.btn:hover{
+  color: #fff;
+  background: #35A9DB;
+}
+
+.frm {
+    background-color: #f2f5f7;
+    padding: 4px;
+    margin-bottom: 1px;
+    margin-top: 30px;
+    border-radius: 10px;
+    opacity: 0.6;
+}
+body
+{
+  font-family: 'Courier', sans-serif;
+  background-image: url(nasi.jpg);
+  background-size: cover;
+
+}
+p
+{
+  color: #fff;
+  opacity: 0.8;
+}
+</style>
+
+<script>
+function proses()
+
+{
+  if(document.form.makan[0].checked) var mk="Soto :"
+  if(document.form.makan[0].checked) var hrg=10000;
+  
+  if(document.form.makan[1].checked) var mk="Nasi Goreng : "
+  if(document.form.makan[1].checked) var hrg=15000;
+  
+  if(document.form.makan[2].checked) var mk="Mie Goreng : "
+  if(document.form.makan[2].checked) var hrg=12000;
+
+  if(document.form.makan[3].checked) var mk="Mendoan : "
+  if(document.form.makan[3].checked) var hrg=2000;
+
+  if(document.form.makan[4].checked) var mk="Mie Ayam : "
+  if(document.form.makan[4].checked) var hrg=10000;
+
+  if(document.form.makan[5].checked) var mk="Es Teh Manis : "
+  if(document.form.makan[5].checked) var hrg=4000;
+  
+  var jml=document.form.jml.value;
+  var ttl=hrg*jml;
+  document.form.ttl.value=ttl;
+  
+  var dis=0;
+  if(ttl>=30000) var dis=0.1*ttl;
+  document.form.dis.value=dis;
+  
+  var byr=ttl-dis;
+  document.form.byr.value=byr;
+
+ if(document.form.jml.value == "")
+ alert("Silahkan Pilih Menu dan Jumlah Pesanan");
+}
+</script>
+
+<body>
+<center>
+<p>
+<h2>Restoran Sido Mampir</h2>
+
+
+<table class="table">
+<tr>
+   <th align="center">Menu</th>
+   <th align="center">Harga</th>
+</tr>
+<tr>
+    <td><input type=radio name=makan>Soto</td>
+    <td>Rp. 10.000</td>
+ </tr>
+ <tr>
+    <td><input type=radio name=makan>Nasi Goreng</td>
+    <td>Rp. 15.000</td>
+ </tr>
+ <tr>
+    <td><input type=radio name=makan>Mie Goreng</td>
+    <td>Rp. 12.000</td>
+ </tr>
+
+ <tr>
+    <td><input type=radio name=makan>Mendoan</td>
+    <td>Rp. 2.000</td>
+ </tr>
+ <tr>
+    <td><input type=radio name=makan>Mie Ayam</td>
+    <td>Rp. 10.000</td>
+ </tr>
+ <tr>
+    <td><input type=radio name=makan>Es Teh Manis</td>
+    <td>Rp. 4.000</td>
+ </tr>
+</table>
+<p>
+<tr><td>Jumlah <td>
+<input class="frm" name=jml size=3>
+<tr><td>Total <td>
+<input class="frm" name=ttl size=3> 
+<tr><td>Diskon <td>
+<input class="frm" name=dis size=3> 
+<tr><td>Bayar <td>
+<input  class="frm" name=byr size=3> 
+<p>
+Dapatkan Diskon 10% dengan minimal pembelian Rp. 30.000!!!
+<p>
+<input class="btn" type=button value=Submit onclick="proses()">
+<input class="btn" type=reset value=Reset>
+</body>
+</html>
